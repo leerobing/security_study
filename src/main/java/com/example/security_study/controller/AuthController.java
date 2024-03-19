@@ -24,12 +24,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/join")
-    public ResponseEntity join(@RequestBody AuthJoinRequestDto authJoinRequestDto) {
+    public String join(@RequestBody AuthJoinRequestDto authJoinRequestDto) {
 
 
         authService.join(authJoinRequestDto);
 
-        return new ResponseEntity(HttpStatus.OK);
+        return "회원가입 완료";
 
     }
 
